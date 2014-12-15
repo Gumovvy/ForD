@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+	<bean id="chemic" class="com.gmv.forDecerto.main.ChemicProduct">
+		<constructor-arg name="name" value="Dezodorant" />
+		<constructor-arg name="kind" value="Pielegnacja" />
+		<constructor-arg name="quantity" value="2123" />
+		<constructor-arg name="packageOfProduct" value="tuba" />
+
+
+	</bean>
+	<bean id="eating" class="com.gmv.forDecerto.main.EatingProduct">
+		<property name="name" value="Chleb" />
+		<property name="kind" value="pieczywo" />
+		<property name="quantity" value="23" />
+		<property name="packageOfProduct" value="folia" />
+
+
+	</bean>
+	<bean id="contactToCustomers" class="com.gmv.forDecerto.main.Other"
+		autowire="byName" destroy-method="cleanUP" init-method="myInit">
+		<property name="contacts">
+			<list>
+				<ref bean="contact" />
+				<ref bean="contact1" />
+				<ref bean="contact2" />
+			</list>
+		</property>
+
+	</bean>
+
+
+
+	<bean id="contact" class="com.gmv.forDecerto.main.ContactToCustomers">
+		<property name="nameOFCustomer" value="Anna"></property>
+		<property name="phone" value="789456123"></property>
+	</bean>
+	<bean id="contact1" class="com.gmv.forDecerto.main.ContactToCustomers">
+		<property name="nameOFCustomer" value="Krystian"></property>
+		<property name="phone" value="789456123"></property>
+	</bean>
+	<bean id="contact2" class="com.gmv.forDecerto.main.ContactToCustomers">
+		<property name="nameOFCustomer" value="Monika"></property>
+		<property name="phone" value="789456123"></property>
+	</bean>
+
+
+
+</beans>
