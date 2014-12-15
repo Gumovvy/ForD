@@ -2,12 +2,9 @@ package com.gmv.forDecerto.main;
 
 import java.util.List;
 
-import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanNameAware;
-import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
+
 
 public class Other implements InitializingBean, BeanNameAware, Drawing {
 	private ContactToCustomers contact;

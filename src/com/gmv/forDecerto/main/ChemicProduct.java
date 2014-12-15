@@ -3,13 +3,21 @@ package com.gmv.forDecerto.main;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
 
-@Entity
-public class ChemicProduct extends Product {
+import org.springframework.context.annotation.Description;
 
+@Entity
+
+public class ChemicProduct extends Product {
+	@Column(name = "rodzaj")
 	private String kind;
+	@Column(name = "opakowanie")
 	private String packageOfProduct;
+	@Column(name = "ilosc")
 	private int quantity;
 
 	public ChemicProduct(String name, String kind, String packageOfProduct, int quantity) {

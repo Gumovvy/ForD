@@ -1,13 +1,16 @@
 package com.gmv.forDecerto.main;
 
+import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 
 @Entity
 public class EatingProduct extends Product {
-
+	@Column(name = "rodzaj")
 	private String kind;
+	@Column(name = "opakowanie")
 	private String packageOfProduct;
+	@Column(name = "ilosc")
 	private int quantity;
 
 	public String getKind() {
